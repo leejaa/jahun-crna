@@ -11,3 +11,10 @@ export * from "./text/text"
 export * from "./text-field/text-field"
 export * from "./wallpaper/wallpaper"
 export * from "./auto-image/auto-image"
+export * from './Movies/HList'
+export * from './Movies/HMedia'
+export * from './Movies/Loader'
+export * from './Movies/Poster'
+export * from './Movies/Slide'
+export * from './Movies/VMedia'
+export * from './Movies/Votes'
