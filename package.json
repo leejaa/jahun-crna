@@ -40,6 +40,7 @@
     "expo-blur": "^11.0.0",
     "expo-linear-gradient": "^10.0.3",
     "expo-localization": "11.0.0",
+    "expo-web-browser": "^10.1.0",
     "i18n-js": "3.8.0",
     "mobx": "6.1.8",
     "mobx-react-lite": "3.2.0",

@@ -11,7 +11,7 @@ import { HList, HMedia, Loader, Slide } from "../../components"
 const { height: SCREEN_HEIGHT } = Dimensions.get("window")
 
 const ListTitle = styled.Text`
-  color: white;
+  color: black;
   font-size: 18px;
   font-weight: 600;
   margin-left: 30px;

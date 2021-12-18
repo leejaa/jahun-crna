@@ -18,13 +18,13 @@ const HColumn = styled.View`
 `
 
 const Overview = styled.Text`
-  color: white;
+  color: black;
   opacity: 0.8;
   width: 80%;
 `
 
 const Release = styled.Text`
-  color: white;
+  color: black;
   font-size: 12px;
   margin: 10px 0px;
   font-weight: 500;
@@ -32,7 +32,7 @@ const Release = styled.Text`
 `
 
 const Title = styled.Text`
-  color: white;
+  color: black;
   font-weight: 600;
   margin-top: 7px;
 `

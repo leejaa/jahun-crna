@@ -14,7 +14,7 @@ const BgImg = styled.Image``
 const Title = styled.Text<{ isDark: boolean }>`
   font-size: 16px;
   font-weight: 600;
-  color: ${(props) => (props.isDark ? "white" : props.theme.textColor)};
+  color: white;
 `
 const Wrapper = styled.View`
   flex-direction: row;
@@ -29,7 +29,7 @@ const Column = styled.View`
 `
 const Overview = styled.Text<{ isDark: boolean }>`
   margin-top: 10px;
-  color: ${(props) => (props.isDark ? "rgba(255, 255, 255, 0.8)" : "rgba(0, 0, 0, 0.8)")};
+  color: "rgba(255, 255, 255, 0.8)";
 `
 const Votes = styled(Overview)`
   font-size: 12px;
@@ -67,7 +67,7 @@ export const Slide: React.FC<SlideProps> = ({
     <TouchableWithoutFeedback onPress={goToDetail}>
       <View style={{ flex: 1 }}>
         <BgImg style={StyleSheet.absoluteFill} source={{ uri: makeImgPath(backdropPath) }} />
-        {/* <BlurView tint={isDark ? "dark" : "light"} intensity={85} style={StyleSheet.absoluteFill}>
+        <View style={StyleSheet.absoluteFill}>
           <Wrapper>
             <Poster path={posterPath} />
             <Column>
@@ -76,7 +76,7 @@ export const Slide: React.FC<SlideProps> = ({
               <Overview isDark={isDark}>{overview.slice(0, 100)}...</Overview>
             </Column>
           </Wrapper>
-        </BlurView> */}
+        </View>
       </View>
     </TouchableWithoutFeedback>
   )
