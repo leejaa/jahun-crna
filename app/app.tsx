@@ -1,73 +1,52 @@
-/**
- * Welcome to the main entry point of the app. In this file, we'll
- * be kicking off our app.
- *
- * Most of this file is boilerplate and you shouldn't need to modify
- * it very often. But take some time to look through and understand
- * what is going on here.
- *
- * The app navigation resides in ./app/navigators, so head over there
- * if you're interested in adding screens and navigators.
- */
-import "./i18n"
-import "./utils/ignore-warnings"
-import React, { useState, useEffect } from "react"
-import { SafeAreaProvider, initialWindowMetrics } from "react-native-safe-area-context"
-import { initFonts } from "./theme/fonts" // expo
-import * as storage from "./utils/storage"
-import { AppNavigator, useNavigationPersistence } from "./navigators"
-import { RootStore, RootStoreProvider, setupRootStore } from "./models"
-import { ToggleStorybook } from "../storybook/toggle-storybook"
-import { ErrorBoundary } from "./screens/error/error-boundary"
+import AppLoading from "expo-app-loading"
+import React, { useState } from "react"
+import * as Font from "expo-font"
+import { Image, useColorScheme } from "react-native"
+import { Ionicons } from "@expo/vector-icons"
+import { Asset } from "expo-asset"
+import { NavigationContainer } from "@react-navigation/native"
+import { QueryClient, QueryClientProvider } from "react-query"
+import Root from "./navigation/Root"
+import { ThemeProvider } from "styled-components/native"
+import { darkTheme, lightTheme } from "./styled"
 
-// This puts screens in a native ViewController or Activity. If you want fully native
-// stack navigation, use `createNativeStackNavigator` in place of `createStackNavigator`:
-// https://github.com/kmagiera/react-native-screens#using-native-stack-navigator
+const queryClient = new QueryClient()
 
-export const NAVIGATION_PERSISTENCE_KEY = "NAVIGATION_STATE"
+const loadFonts = (
+  fonts:
+    | string[]
+    | {
+        [fontFamily: string]: Font.FontSource
+      }[],
+) => fonts.map((font) => Font.loadAsync(font))
 
-/**
- * This is the root component of our app.
- */
-function App() {
-  const [rootStore, setRootStore] = useState<RootStore | undefined>(undefined)
-  const {
-    initialNavigationState,
-    onNavigationStateChange,
-    isRestored: isNavigationStateRestored,
-  } = useNavigationPersistence(storage, NAVIGATION_PERSISTENCE_KEY)
+const loadImages = (images: string[] | number[] | string[][] | number[][]) =>
+  images.map((image) => {
+    if (typeof image === "string") {
+      return Image.prefetch(image)
+    } else {
+      return Asset.loadAsync(image)
+    }
+  })
 
-  // Kick off initial async loading actions, like loading fonts and RootStore
-  useEffect(() => {
-    ;(async () => {
-      await initFonts() // expo
-      setupRootStore().then(setRootStore)
-    })()
-  }, [])
-
-  // Before we show the app, we have to wait for our state to be ready.
-  // In the meantime, don't render anything. This will be the background
-  // color set in native by rootView's background color.
-  // In iOS: application:didFinishLaunchingWithOptions:
-  // In Android: https://stackoverflow.com/a/45838109/204044
-  // You can replace with your own loading component if you wish.
-  if (!rootStore || !isNavigationStateRestored) return null
-
-  // otherwise, we're ready to render the app
+export default function App() {
+  const [ready, setReady] = useState(false)
+  const onFinish = () => setReady(true)
+  const startLoading = async () => {
+    const fonts = loadFonts([Ionicons.font])
+    await Promise.all([...fonts])
+  }
+  const isDark = useColorScheme() === "dark"
+  if (!ready) {
+    return <AppLoading startAsync={startLoading} onFinish={onFinish} onError={console.error} />
+  }
   return (
-    <ToggleStorybook>
-      <RootStoreProvider value={rootStore}>
-        <SafeAreaProvider initialMetrics={initialWindowMetrics}>
-          <ErrorBoundary catchErrors={"always"}>
-            <AppNavigator
-              initialState={initialNavigationState}
-              onStateChange={onNavigationStateChange}
-            />
-          </ErrorBoundary>
-        </SafeAreaProvider>
-      </RootStoreProvider>
-    </ToggleStorybook>
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
+        <NavigationContainer>
+          <Root />
+        </NavigationContainer>
+      </ThemeProvider>
+    </QueryClientProvider>
   )
 }
-
-export default App

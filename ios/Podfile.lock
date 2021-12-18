@@ -22,6 +22,9 @@ PODS:
     - ExpoModulesCore
   - ExpoModulesCore (0.4.9):
     - React-Core
+  - EXSplashScreen (0.14.0):
+    - ExpoModulesCore
+    - React-Core
   - FBLazyVector (0.66.3)
   - FBReactNativeSpec (0.66.3):
     - RCT-Folly (= 2021.06.28.00-v2)
@@ -387,6 +390,7 @@ DEPENDENCIES:
   - EXLocalization (from `../node_modules/expo-localization/ios`)
   - Expo (from `../node_modules/expo/ios`)
   - ExpoModulesCore (from `../node_modules/expo-modules-core/ios`)
+  - EXSplashScreen (from `../node_modules/expo-splash-screen/ios`)
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
   - FBReactNativeSpec (from `../node_modules/react-native/React/FBReactNativeSpec`)
   - Flipper (= 0.99.0)
@@ -487,6 +491,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/expo/ios"
   ExpoModulesCore:
     :path: "../node_modules/expo-modules-core/ios"
+  EXSplashScreen:
+    :path: "../node_modules/expo-splash-screen/ios"
   FBLazyVector:
     :path: "../node_modules/react-native/Libraries/FBLazyVector"
   FBReactNativeSpec:
@@ -570,6 +576,7 @@ SPEC CHECKSUMS:
   EXLocalization: bb38414618b30a177482c9a6f5594ec6eb0898c1
   Expo: 363a3f3c60d5a1d4f8badb29a869005487f2d9e4
   ExpoModulesCore: e41ed0b72daeac74731816ad7997d639f0115a9d
+  EXSplashScreen: 845290df0d2730fdedc59ee6ce3b959d8079a350
   FBLazyVector: de148e8310b8b878db304ceea2fec13f2c02e3a0
   FBReactNativeSpec: 6192956c9e346013d5f1809ba049af720b11c6a4
   Flipper: 30e8eeeed6abdc98edaf32af0cda2f198be4b733
