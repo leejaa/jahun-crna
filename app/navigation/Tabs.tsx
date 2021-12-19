@@ -7,6 +7,7 @@ import { Movies, Tv, Search } from "../screens"
 import { useColorScheme } from "react-native"
 import { BLACK_COLOR, DARK_GREY, LIGHT_GREY, YELLOW_COLOR } from "../colors"
 import { Ionicons } from "@expo/vector-icons"
+import { Lang } from "../screens/Lang/Lang"
 
 const Tab = createBottomTabNavigator()
 
@@ -53,6 +54,15 @@ const Tabs = () => {
         }}
       />
       <Tab.Screen
+        name="Lang"
+        component={Lang}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name={"search-outline"} color={color} size={size} />
+          ),
+        }}
+      />
+      {/* <Tab.Screen
         name="Search"
         component={Search}
         options={{
@@ -60,7 +70,7 @@ const Tabs = () => {
             <Ionicons name={"search-outline"} color={color} size={size} />
           ),
         }}
-      />
+      /> */}
     </Tab.Navigator>
   )
 }
