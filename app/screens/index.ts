@@ -6,4 +6,7 @@ export * from "./Movies/Movies"
 export * from "./TV/Tv"
 export * from "./Search/Search"
 export * from "./Detail/Detail"
+export * from "./Detail/Detail"
+export * from "./Diary/Diary"
+export * from "./Diary/Write"
 // export other screens here

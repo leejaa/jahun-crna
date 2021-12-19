@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import { Detail } from "../screens/Detail/Detail"
 import { BLACK_COLOR } from "../colors"
 import { useColorScheme } from "react-native"
+import { Write } from "../screens"
 
 const NativeStack = createNativeStackNavigator()
 
@@ -21,6 +22,7 @@ const Stack = () => {
       }}
     >
       <NativeStack.Screen name="Detail" component={Detail} />
+      <NativeStack.Screen name="Write" component={Write} />
     </NativeStack.Navigator>
   )
 }

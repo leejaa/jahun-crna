@@ -10,6 +10,11 @@
       android:roundIcon="@mipmap/ic_launcher_round"
       android:allowBackup="false"
       android:theme="@style/AppTheme">
+    <!-- Ensure that tag with this name and proper value is inside application -->
+      <meta-data
+        android:name="com.google.android.gms.ads.APPLICATION_ID"
+        android:value="ca-app-pub-3940256099942544~3347511713"/> <!-- App ID -->
+    <!-- You can find your App ID in the AdMob UI -->
       <activity
         android:name=".MainActivity"
         android:label="@string/app_name"
