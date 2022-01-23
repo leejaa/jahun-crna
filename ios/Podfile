@@ -16,6 +16,8 @@ target 'HelloWorld' do
     :hermes_enabled => podfile_properties['expo.jsEngine'] == 'hermes'
   )
 
+  pod 'react-native-webview', :path => '../node_modules/react-native-webview'
+
   target 'HelloWorldTests' do
     inherit! :complete
     # Pods for testing

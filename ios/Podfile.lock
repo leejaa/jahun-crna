@@ -347,6 +347,8 @@ PODS:
     - glog
   - react-native-safe-area-context (3.1.8):
     - React-Core
+  - react-native-webview (11.17.0):
+    - React-Core
   - React-perflogger (0.66.3)
   - React-RCTActionSheet (0.66.3):
     - React-Core/RCTActionSheetHeaders (= 0.66.3)
@@ -486,6 +488,7 @@ DEPENDENCIES:
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
+  - react-native-webview (from `../node_modules/react-native-webview`)
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
   - React-RCTAnimation (from `../node_modules/react-native/Libraries/NativeAnimation`)
@@ -595,6 +598,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/logger"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
+  react-native-webview:
+    :path: "../node_modules/react-native-webview"
   React-perflogger:
     :path: "../node_modules/react-native/ReactCommon/reactperflogger"
   React-RCTActionSheet:
@@ -687,6 +692,7 @@ SPEC CHECKSUMS:
   React-jsinspector: d9c8eb0b53f0da206fed56612b289fec84991157
   React-logger: e522e76fa3e9ec3e7d7115b49485cc065cf4ae06
   react-native-safe-area-context: 79fea126c6830c85f65947c223a5e3058a666937
+  react-native-webview: 10996be8bcc5e37a30dbc139fc544bb651dc8612
   React-perflogger: 73732888d37d4f5065198727b167846743232882
   React-RCTActionSheet: 96c6d774fa89b1f7c59fc460adc3245ba2d7fd79
   React-RCTAnimation: 8940cfd3a8640bd6f6372150dbdb83a79bcbae6c
@@ -708,6 +714,6 @@ SPEC CHECKSUMS:
   Yoga: 32a18c0e845e185f4a2a66ec76e1fd1f958f22fa
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: b581f42e1476e39e797ae1f456cf61f1a778a55a
+PODFILE CHECKSUM: 03a9caf3ccd494e11a007ad3edf838942aa698ee
 
 COCOAPODS: 1.11.2

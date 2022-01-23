@@ -6,8 +6,9 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import { Movies, Tv, Search, Diary } from "../screens"
 import { useColorScheme } from "react-native"
 import { BLACK_COLOR, DARK_GREY, LIGHT_GREY, YELLOW_COLOR } from "../colors"
-import { Ionicons } from "@expo/vector-icons"
+import { Ionicons, Foundation } from "@expo/vector-icons"
 import { Lang } from "../screens/Lang/Lang"
+import { WebViewComponent } from "../screens/WebView/WebView"
 
 const Tab = createBottomTabNavigator()
 
@@ -67,6 +68,13 @@ const Tabs = () => {
           tabBarIcon: ({ color, size }) => (
             <Ionicons name={"search-outline"} color={color} size={size} />
           ),
+        }}
+      />
+      <Tab.Screen
+        name="WebView"
+        component={WebViewComponent}
+        options={{
+          tabBarIcon: ({ color, size }) => <Foundation name="web" color={color} size={size} />,
         }}
       />
       {/* <Tab.Screen

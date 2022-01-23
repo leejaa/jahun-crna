@@ -9843,7 +9843,7 @@
   "resolved" "https://registry.npmjs.org/interpret/-/interpret-2.2.0.tgz"
   "version" "2.2.0"
 
-"invariant@*", "invariant@^2.2.2", "invariant@^2.2.3", "invariant@^2.2.4":
+"invariant@*", "invariant@^2.2.2", "invariant@^2.2.3", "invariant@^2.2.4", "invariant@2.2.4":
   "integrity" "sha512-phJfQVBuaJM5raOpJjSfkiD6BpbCE4Ns//LaXl6wGYtUBY83nWS6Rf9tXm2e8VaK60JEjYldbPif/A2B1C2gNA=="
   "resolved" "https://registry.npmjs.org/invariant/-/invariant-2.2.4.tgz"
   "version" "2.2.4"
@@ -14699,6 +14699,14 @@
     "inline-style-prefixer" "^6.0.0"
     "normalize-css-color" "^1.0.2"
     "prop-types" "^15.6.0"
+
+"react-native-webview@^11.17.0":
+  "integrity" "sha512-mm6XYOne4K0c9eYOArmJOuo9fOUeESB7DT+xihLcX84qMTsepPTcnkKha5BxuFwlvKKlSj4KzgkUMl15Mhbvdw=="
+  "resolved" "https://registry.npmjs.org/react-native-webview/-/react-native-webview-11.17.0.tgz"
+  "version" "11.17.0"
+  dependencies:
+    "escape-string-regexp" "2.0.0"
+    "invariant" "2.2.4"
 
 "react-native@*", "react-native@^0.0.0-0 || ^0.60.6 || ^0.61.5 || ^0.62.2 || ^0.63.2 || ^0.64.0 || ^0.65.0 || ^0.66.0 || 1000.0.0", "react-native@^0.62.0", "react-native@>=0.14.0 <1", "react-native@>=0.40.0", "react-native@>=0.57", "react-native@>=0.57.0", "react-native@>=0.60", "react-native@0.66.3":
   "integrity" "sha512-B/dQpuvta9YvF5MihDWefoGlTvxzUHK5X5RjdrXHAu/ihTehJXxEA+m6z/tufp1ZUMDjU+tMZK6gnehzCuYfzw=="
